@@ -1,0 +1,38 @@
+{
+	"dat":[
+	        {
+	        	"id":4001,
+		   	    "pic":"img/f4-11.jpg",
+		   	    "name":"Mandy Bag 粉色",
+		   	    "ymon":"588.00",
+	        	"xmon":"368.00"
+	        },
+	        
+	          {
+	        	"id":4002,
+		   	    "pic":"img/f4-21.jpg",
+		   	    "name":"May 水桶包",
+		   	    "ymon":"568.00",
+	        	"xmon":"328.00"
+	        },
+	        
+	          {
+	        	"id":4003,
+		   	    "pic":"img/f4-34.jpg",
+		   	    "name":"Sherry Bag",
+		   	    "ymon":"1088.00",
+	        	"xmon":"658.00"
+	        },
+	        
+	          {
+	        	"id":4004,
+		   	    "pic":"img/f4-41.jpg",
+		   	    "ps":"img/f4-0.png",
+		   	    "pto":"img/f4-01.jpg",
+		   	    "name":"Cat 不规则包",
+		   	    "ymon":"968.00",
+	        	"xmon":"568.00"
+	        }
+	        
+	      ]
+} 

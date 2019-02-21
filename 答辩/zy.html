@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			clear::after{
+				content: "";
+				display: table;
+                clear: both;
+                height: 0;
+                visibility: hidden;
+			}
+			.mor{
+				width: 932px;
+				display: block;
+				margin: 10px auto;
+		
+				
+			}
+			.titile{
+			width: 100%;
+			height: 96px;
+             position: relative;
+			}
+			.titile>i:first-child{
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url(img/10ye.jpg) center no-repeat;
+			}
+			.titile>i:last-child{
+				position: absolute;
+				top: 0;
+				right: 20px;
+				display: inline-block;
+				width: 558px;
+				height: 52px;
+				background: url(img/10years.png);
+			}
+			.title{
+				display: block;
+				width: 100%;
+			}
+			.title>span{
+				display: block;
+				width: 100%;
+				text-align: center;
+				font-size: 30px;
+				margin-bottom: 30px;
+			}
+			.cen-title{
+				display: block;
+				width: 390px;
+				height: 30px;
+				background: url(img/quzhi.jpg) no-repeat  center;
+			}
+			.ps{
+				float:left;
+				background: url(img/loveq_in.jpg) no-repeat ;
+				background-size: 542px 604px ;
+				width: 542px;
+				height: 604px;
+			}
+			.box{
+				display: block;
+				float: left;
+				margin: 50px auto;
+				margin-left: 20px;
+				width: 360px;
+				background: white;
+				border: 1px solid#999;
+			}
+			.mors{
+				display: block;
+				margin: 0px auto;
+				margin-top: 30px;
+				width: 270px;
+				background: white;
+				overflow: hidden;
+				
+			}
+			.title{
+				width: 100%;
+				padding: 30px 0;
+				border-bottom:1px solid black ;
+				margin-bottom: 30px;
+			}
+			.title>span{
+				display:block;
+				float: left;
+				font-size: 20px;
+				width: 200px;
+				line-height: 30px;
+				/*float: left;*/
+			}
+			.title>button{
+				display:inline-block;
+				float: right;
+				padding: 5px 8px;
+				cursor: pointer;
+				outline: none;
+				border: none;
+				background: palevioletred;
+				color: white;
+				
+			}
+			.mors>span{
+				display: inline-block;
+				float: left;
+				margin-top: 30px;
+				width: 30px;
+				height: 30px;
+				background: red;
+			}
+			.mors>span:nth-child(2){
+				background: url(img/ju2.png) -130px 59px;
+			}
+			.mors>span:nth-child(4){
+				background: url(img/ju2.png) -103px 59px;
+			}
+				
+			.mors>input{
+				float: left;
+				text-indent: 10px;
+				display: inline-block;
+				margin-top: 30px;
+				width: 240px;
+				height: 30px;
+				outline: none;
+				border: none;
+				border-bottom:1px solid black ;
+			}
+			.mors>button{
+				margin-top: 30px;
+				border-radius:5px ;
+				background: skyblue;
+				color: white;
+				width: 270px;
+				padding: 20px 0px;
+				outline: none;
+				border: none;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mor clear">
+			<div class="titile clear">
+				<i></i>
+				<i></i>
+			</div>
+			<p class="cen-title"></p>
+			<div class="ps">
+					<i></i>
+			</div>
+		     <div class="box clear">
+			    <div class="mors clear">
+				<p class="title clear">
+					<span>会员登录 LOG IN注册</span>
+					<button id="register">注册</button>
+				</p>
+				<span></span>
+				<input type="text" name="" id="txt" value=""  placeholder="手机号"/>
+				<span></span>
+				<input type="password" name="" id="pwd" value=""  placeholder="密码"/>
+				<button id="sign">登录</button>
+			    </div>
+		    </div>
+		</div>    
+	</body>
+	<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var txt = document.getElementById("txt");
+		var pwd = document.getElementById("pwd");
+		var register = document.getElementById("register");
+			var sign = document.getElementById("sign");
+			
+			register.onclick=function(){
+				 location.href="zuce.html";
+			}
+			 sign.onclick=function(){
+			 	 if (Cookie.has(txt.value)==true) {
+			 	 		if (Cookie.get(txt.value)==pwd.value) {
+			 	 			Cookie.set("id",txt.value,200)
+			 	 			location.href="sy.html";
+			 	 		} else{
+			 	 			alert("密码错误")
+			 	 		}
+			 	 }else{
+			 	 	alert("用户名不正确")
+			 	 }
+			 	 
+	
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 }
+			 
+var Cookie={
+	//设置cookie             oexp 过期时间  单位是分钟
+	set:function(oname,ovalue,oexp){
+		var oname = encodeURIComponent(oname); 
+		var ovalue = encodeURIComponent(ovalue); 
+		var d = new Date();
+		d.setMinutes(d.getMinutes()+oexp);
+		document.cookie=oname+"="+ovalue+";expires="+d.toGMTString();
+	},
+	get:function(oname){   //获取cookie中name对应的值    返回对应的值
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		for(var i=0;i<arr.length;i++){
+			var brr = arr[i].split("=");
+			if(brr[0]==oname){
+				return decodeURIComponent(brr[1])
+			}
+		}
+	},
+	has:function(oname){  //判断是否存在该name   返回true/false
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		return arr.some(function(a){
+				return a.split("=")[0]==oname
+		})		
+	},
+	del:function(oname){  //删除指定name和它的value
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		for(var i=0;i<arr.length;i++){
+			var brr = arr[i].split("=");
+			if(brr[0]==oname){
+				var d = new Date();
+				d.setMinutes(-1);
+				document.cookie=oname+"="+brr[1]+";expires="+d.toGMTString();
+				return decodeURIComponent(brr[0])+"="+decodeURIComponent(brr[1])
+			}
+		}
+		
+	}
+}
+	</script>
+</html>

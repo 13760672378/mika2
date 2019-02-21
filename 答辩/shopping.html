@@ -1,0 +1,590 @@
+<!D0OCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			ul{list-style: none;}
+			a{text-decoration: none;}
+			clear::after{
+				content: "";
+				display: table;
+				clear:both;
+				height: 0;
+				visibility: hidden;
+			}
+			.titiler {
+				display: inline-block;
+				width: 100%;
+				background: #343434;
+				position: fixed;
+				top: 0;
+				z-index: 100;
+			}
+
+				.titile-box {
+					margin: 0 auto;
+					width: 1180px;
+					height: 76px;
+				}
+				
+				.titile-logo {
+					float: left;
+					width: 200px;
+					height: 76px;
+					background: url(img/logo.jpg);
+					background-size: cover;
+				}
+				
+				.title-nav {
+					float: left;
+					width: 600px;
+					margin-left: 30px;
+					display: flex;
+					justify-content: space-around;
+				}
+				
+				.title-nav>li {
+					position: relative;
+					float: left;
+					height: 76px;
+					line-height: 86px;
+					text-align: center;
+				}
+				
+				.title-nav>li>a {
+					display: inline-block;
+					font-weight: 700;
+					font-size: 15px;
+					padding: 0 10px;
+					color: #a0a0a0;
+				}
+				
+				.title-nav>li>span {
+					position: absolute;
+					display: block;
+					bottom: 2px;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 0px;
+					height: 2px;
+					background: white;
+					transition: all 0.6s;
+				}
+				
+				.title-nav>li:hover>span {
+					width: 100%;
+				}
+			
+				.title-nav>li>a:hover {
+					color: white;
+					cursor: pointer;
+				}
+				
+				.search {
+					margin: 34px 0 0 20px;
+					float: left;
+					width: 53px;
+					height: 17px;
+					overflow: hidden;
+					background: url(img/sea.png) no-repeat;
+				}
+				
+				.search>input:first-child {
+					display: inline-block;
+					float: left;
+					width: 30px;
+					height: 20px;
+					text-indent: 15px;
+					background: transparent;
+					outline: none;
+					border: none;
+				}
+				
+				.search>input:nth-child(2) {
+					display: block;
+					float: left;
+					width: 23px;
+					height: 20px;
+					border: none;
+					outline: none;
+					background: transparent;
+					cursor: pointer;
+				}
+				
+				#car {
+					display: block;
+					margin: 25px 0 0 25px;
+					float: left;
+					width: 32px;
+					height: 30px;
+					background: url(img/nav02.png) no-repeat center;
+				}
+				
+				#car>span {
+					display: block;
+					margin: 5px 0 0 14px;
+					font-size: 14px;
+					color: white;
+				}
+				
+				#car:hover>span {
+					text-decoration: underline;
+				}
+				
+				.end-box {
+					float: left;
+					display: inline-block;
+					margin: 25px 0 0 20px;
+				}
+				
+				.end-box>a {
+					display: inline-block;
+					padding: 5px;
+					font-size: 14px;
+					margin-left: 10px;
+					color: #a0a0a0;
+					cursor: pointer;
+				}
+				
+				.end-box>a:hover {
+					color: white;
+				}
+				.box{
+				display: block;
+				margin:  90px auto;
+				width: 1200px;
+			}
+			.titile{
+				display: inline-block;
+				width: 100%;
+				background: #999;
+				border-radius:6px ;
+			}
+			.titile>li{
+				float: left;
+				padding: 15px 60px;
+				
+			}
+			.titile>li:nth-child(1){
+				margin-left: 20px;
+			}
+			.titile>li>span{
+				font-size: 20px;
+			}
+			.titile>li:nth-child(2){
+				margin-right: 20px;
+			}
+			.titile>li:nth-child(3){
+				margin-right: 30px;
+			}
+			.titile>li:nth-child(4){
+				margin-right: 50px;
+			}
+			.titile>li:nth-child(5){
+				margin-right: 30px;
+			}
+			.center-tit{
+				width: 100%;
+				padding: 5px 0 0px 40px;
+				box-sizing: border-box;
+				border-top:2px solid#999;
+				font-size: 19px;
+				
+			}
+			.center{
+				width: 100%;
+			}
+			.center>li{
+				height: 149px;
+				border-bottom: 1px solid #999;
+			}
+			.settlement-strip{
+				width: 1200px;
+				margin: 40px auto;
+				height: 50px;
+				background: #ececec;
+			}
+			#settlement{
+				float: right;
+				padding: 13px 100px;
+				background: red;
+				border: none;
+				outline: none;
+				font-size: 18px;
+				color: white;
+				cursor: pointer;
+			}
+			.settlement-strip>span{
+				display: inline-block;
+				padding: 10px 5px;
+			}.settlement-strip>span:nth-child(1){
+				margin-left: 700px;
+				font-size: 20px;
+			}
+			.center-center{
+				display: block;
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+			}
+			.center-center>li{
+				float: left;
+				width:190px ;
+				height: 150px;
+				padding-top: 70px;
+				box-sizing: border-box;
+				font-size: 16px;
+				text-align: center;
+				/*background: deepskyblue;*/
+			}
+			.center-center>li:nth-child(1){
+				padding: 0;
+			}
+			.center-center>li:nth-child(4)>i{
+				display: inline-block;
+				float: left;
+				width: 30px;
+				height: 30px;
+				cursor: pointer;
+				margin-right: 5px;
+			}
+			.center-center>li:nth-child(4)>p{
+	   		    float: left;
+				width: 28px;
+				height: 28px;
+				border: 1px solid #999;
+				font-size: 16px;
+				line-height: 28px;
+				margin-right: 5px;
+			}
+			.center-center>li:last-child>a{
+				margin-right: 20px;
+			}
+			.center-center>li:last-child>a:hover{
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		    .ps{
+		    	display: block;
+		    	margin: 15px auto;
+				width:89px;
+				height: 119px;
+				background: red;
+			}
+			.plus{
+				margin-left: 40px;
+				background: url(img/4-3.jpg);
+				background-size:cover ;
+			}
+			.reduce{
+				background: url(img/4-4.jpg);
+				background-size:cover ;
+			}
+			.name{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.name:hover{
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<!--头部-->
+					<div class="titiler">
+
+						<div class="titile-box clear">
+							<a class="titile-logo" href="sy.html"></a>
+							<ul class="title-nav">
+								<li>
+						            <a href="sy.html">首页</a>
+						            <span></span>
+								</li>		
+								<li>
+									<a href="f1.html">衣服</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f2.html">T恤·衬衫</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f3.html">鞋袜</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f4.html">包袋</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f5.html">美酒</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f6.html">美食</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="f7.html">生活</a>
+									<span></span>
+								</li>
+							</ul>
+							<div class="search">
+								<input type="text" name="" id="" value="" />
+							    <input type="submit" name="" id="" value="" />
+							</div>
+							<a id="car" href="shopping.html"><span id="mun">0</span></a>
+							<div class="end-box">
+								<a id="zc" href="zuce2.html">注册</a>
+								<a id="dl">登录</a>
+							</div>
+						</div>
+					</div>
+		<div class="box clear">
+			<ul class="titile">
+				<li><span>商品图</span></li>
+				<li><span>商品信息</span></li>
+				<li><span>单价</span></li>
+				<li><span>数量</span></li>
+				<li><span>小计</span></li>
+				<li><span>操作</span></li>
+			</ul>
+			<p class="center-tit"><b>网点自营</b></p>
+			<ul class="center">
+
+			</ul>
+			<div class="settlement-strip clear">
+				<span class="settlement-name">商品金额：</span>
+				<span id="money"></span>
+				<button id="settlement">结算中心</button>
+			</div>
+		</div>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//总金额
+			var mony = 0;
+			//数据盒子
+			var grr = null;
+			
+			//	console.log(JSON.parse(localStorage.getItem("1001")));
+			grr = localStorage;
+			var hrr = [];
+			for(h in grr) {
+				if(grr.hasOwnProperty(h)) {
+					console.log(h);
+					//JSON.parse就能获取到东西；	
+				     if (h.split("=")[1]==Cookie.get("id")) {			     	
+					   hrr.push(JSON.parse(grr[h]));					   
+				    }
+
+				}
+			};
+			console.log(localStorage.key(2));
+			
+			
+			var dl =document.getElementById("dl");
+			var zc =document.getElementById("zc");
+			var t=null;
+			dl.onclick=function(){
+			   	if (Cookie.has("id")) {
+				   	  	t= Cookie.get("id");
+				   	  	zc.innerText="您好"+t;
+				   	  	dl.innerText = "退出";
+				   	    }else{
+				   	  	location.href="zy2.html";
+			   	    }
+			    }; 
+			    if (Cookie.has("id")) {
+			   	  	    t= Cookie.get("id");
+			   	  	    zc.innerText="您好"+t;
+			   	  	    dl.innerText = "退出";
+			    }
+			    //购物车数量
+			var mu = document.getElementById("mun");
+			    mu.innerText =hrr.length ;
+//				localStorage.key(i).split("=")[1]==Cookie.get("id");
+//				if (localStorage.key(i).split("=")[1]==Cookie.get("id")) {
+//					
+//				}
+			
+//			 if (localStorage.key(0).split("=")[1]==Cookie.get("id")) {
+//			 	mu.innerText = ;
+//			 }
+			var cen = document.getElementsByClassName("center")[0];
+			var b = 0;
+			for(i = 0; i < hrr.length; i++) {
+				b++;
+				//cen>li
+				var li = document.createElement("li");
+				//li>ul(类名 center-center)
+				var txt = document.createElement("ul");
+				txt.className = "center-center";
+				//        	 //  ul(类名 center-center)>li(第一个li)
+				var liOne = document.createElement("li");
+				//        	   //ul(类名 center-center)>li(第一个li)>i(图片)；
+				var aq = document.createElement("i");
+				aq.className = "ps";
+				aq.style = "background:url(" + hrr[i]["p.img"] + "); background-size:cover ;";
+				//  ul(类名 center-center)>li(第二个li)
+				var liTwo = document.createElement("li");
+				//ul(类名 center-center)>li(第二个li)>a(名字)；
+				var lqn = document.createElement("a");
+				lqn.className = "name";
+				lqn.innerHTML = hrr[i]["p.name"];
+				//ul(类名 center-center)>li(第二个li)>span(尺寸)；
+				var lqs = document.createElement("p");
+				lqs.className = "siza";
+				if(hrr[i]["p.siz"]) {
+					lqs.innerHTML = "尺码：(" + hrr[i]["p.siz"] + ")";
+				}
+				//ul(类名 center-center)>li(第三个li)；
+				var liThere = document.createElement("li");
+				//ul(类名 center-center)>li(第三个li)>span(单价)；
+				var xman = document.createElement("span");
+				xman.innerText = "￥" + hrr[i]["p.xmon"];
+				//ul(类名 center-center)>li(第四个li)；
+				var liFour = document.createElement("li");
+				//ul(类名 center-center)>li(第四个li)>i(减号图片)；
+				var plu = document.createElement("i");
+				plu.className = "plus";
+				//ul(类名 center-center)>li(第四个li)>a(数量)；
+				var mun = document.createElement("p");
+				mun.className = "mun";
+				mun.innerText = hrr[i]["p.set"];
+				//ul(类名 center-center)>li(第四个li)>i(加号号图片)；
+				var red = document.createElement("i");
+				red.className = "reduce";
+				//ul(类名 center-center)>li(第五个li)；
+				var liFive = document.createElement("li");
+				//ul(类名 center-center)>li(第五个li)>span(数量*单价)；
+				var mon = document.createElement("span");
+				mon.innerText = "￥" + ((hrr[i]["p.xmon"]) * (hrr[i]["p.set"])).toFixed(2);
+				mon.className = "cat";
+				//ul(类名 center-center)>li(第六个li)；
+				var liSix = document.createElement("li");
+				//ul(类名 center-center)>li(第六个li)>a(收藏)；
+				var su = document.createElement("a");
+				su.innerText = "收藏";
+				su.className = "su";
+				//ul(类名 center-center)>li(第五个li)>a(删除)；
+				var del = document.createElement("a");
+				del.innerText = "删除";
+				del.className = "del";
+				liOne.appendChild(aq);
+				liTwo.appendChild(lqn);
+				liTwo.appendChild(lqs);
+				liThere.appendChild(xman);
+				liFour.appendChild(plu);
+				liFour.appendChild(mun);
+				liFour.appendChild(red);
+				liFive.appendChild(mon);
+				liSix.appendChild(su);
+				liSix.appendChild(del);
+				txt.appendChild(liOne);
+				txt.appendChild(liTwo);
+				txt.appendChild(liThere);
+				txt.appendChild(liFour);
+				txt.appendChild(liFive);
+				txt.appendChild(liSix);
+				li.appendChild(txt);
+				cen.appendChild(li);
+				//总金额   
+				mony += (hrr[i]["p.xmon"]) * (hrr[i]["p.set"]);
+				//收藏
+				console.log(del);
+				console.log(hrr[0].id);
+				su.onclick = function() {
+					alert("已为你添加到个人收藏里");
+				}
+			
+			}
+			//加          
+			var plusLi = document.getElementsByClassName("plus");
+			var reduces = document.getElementsByClassName("reduce");
+			var muns = document.getElementsByClassName("mun");
+			console.log(muns);
+			var sea = document.getElementsByClassName("cat");
+			var money = document.getElementById("money");
+			var c = null;
+			
+			for(i = 0; i < plusLi.length; i++) {
+				plusLi[i].onclick = function(a) {
+					return function() {
+						c = muns[a].innerText;
+						if(c == 1) {
+							c = 1
+						} else {
+							c--;
+						}
+						muns[a].innerText = c;
+					
+						sea[a].innerHTML = "￥" + (muns[a].innerText * hrr[a]["p.xmon"]).toFixed(2);
+						var zong = 0;
+						for(var i = 0; i < sea.length; i++) {
+							zong += Number(sea[i].innerHTML.replace("￥", ""))
+						}
+						money.innerText = "￥" + zong.toFixed(2);
+					}
+				}(i)
+			}
+			
+			//右
+			for(i = 0; i < reduces.length; i++) {
+				reduces[i].onclick = function(a) {
+					return function() {
+						c = muns[a].innerText;
+						if(c == 1) {
+							c = 1
+						}
+						c++;
+						muns[a].innerText = c;
+						
+						sea[a].innerHTML = "￥" + (muns[a].innerText * hrr[a]["p.xmon"]).toFixed(2);
+						var zong = 0;
+						for(var i = 0; i < sea.length; i++) {
+							zong += Number(sea[i].innerHTML.replace("￥", ""))
+						}
+						money.innerText = "￥" + zong.toFixed(2);
+					}
+				}(i)
+			}
+			//初始金额
+			money.innerText = "￥" + (mony).toFixed(2);
+			var dels = document.getElementsByClassName("del");
+			
+			//删除
+			for(i = 0; i < dels.length; i++) {
+				dels[i].onclick = function(a) {
+					return function() {
+						dels[a].parentNode.parentNode.parentNode.remove();
+						localStorage.removeItem(hrr[a].id);
+						var zong = 0;
+						for(var i = 0; i < sea.length; i++) {
+							zong += Number(sea[i].innerHTML.replace("￥", ""))
+						}
+						money.innerText = "￥" + zong.toFixed(2);
+					}
+				}(i)
+			}
+			//结算按钮
+			var setlement= document.getElementById("settlement");
+			setlement.onclick=function(){
+				 	if (Cookie.has("id")) {
+				   	  	t= Cookie.get("id");
+				   	  	zc.innerText="您好"+t;
+				   	  	dl.innerText = "退出";
+				   	   }else{
+				   	   	  alert("请登录");
+				   	  	location.href="zy2.html";
+			   	    }
+			    }; 
+			
+		</script>
+	</body>
+</html>

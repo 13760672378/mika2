@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			ul{list-style: none;}
+			a{text-decoration: none;}
+			.clear::after{
+				content: "";
+				display: table;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.titile{
+			 display: inline-block;
+			  width: 100%;
+			  background: #343434;
+			}
+			.titile-box{
+				margin: 0 auto;
+				width: 1180px;
+				height: 76px;
+			    
+			}
+			.titile-logo{
+				float: left;
+				width: 200px;
+				height: 76px;
+				background: url(img/logo.jpg);
+				background-size:cover ;
+			}
+			.title-nav{
+				float: left;
+				width: 600px;
+				margin-left: 30px;
+				display: flex;
+				justify-content: space-around;
+				
+			}
+			
+		
+			.title-nav>li{
+				position: relative;
+				float: left;
+				height: 76px;
+				line-height: 86px;
+				text-align: center;
+				
+			}
+			.title-nav>li>a{
+				
+				display: inline-block;
+				font-weight:700 ;
+				font-size:15px ;
+				padding: 0 10px;
+				color: #a0a0a0;
+				
+			}
+			.title-nav>li>span{
+				position: absolute;
+				display: block;
+				bottom: 2px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 0px;
+				height: 2px;
+				background: white;
+				transition: all 0.6s;
+			}	
+			.title-nav>li:hover>span{
+				width: 100%;
+			}
+			
+		/*	这里修改*/
+			.title-nav>li:nth-child(6)>span{
+				width: 100%;
+			}	
+			.title-nav>li:nth-child(6)>a{
+					color: white;
+			}
+			.title-nav>li>a:hover{
+				color: white;
+				cursor: pointer;
+			}
+			.search{
+				margin: 34px 0 0 20px;
+				float: left;
+				width: 53px;
+				height: 17px;
+				overflow: hidden;
+				background: url(img/sea.png) no-repeat;
+			}
+			.search>input:first-child{
+				display: inline-block;
+				float: left;
+				width: 30px;
+				height: 20px;
+				text-indent:15px ;
+				background: transparent;
+				outline: none;
+				border: none;
+				
+			}
+			.search>input:nth-child(2){
+				display: block;
+				float: left;
+				width: 23px;
+				height: 20px;
+				border: none;
+				outline: none;
+				background:transparent;
+				cursor: pointer;
+			}
+			#car{
+				display: block;
+				margin: 25px 0 0 25px;
+				float: left;
+				width: 32px;
+				height: 30px;
+				background: url(img/nav02.png) no-repeat center;
+			}
+			#car>span{
+				display: block;
+				margin: 5px 0 0 14px;
+				font-size: 14px;
+				color: white;
+			}
+			#car:hover>span{
+				text-decoration: underline;
+			}
+			.end-box{
+				float: left;
+				display: inline-block;
+				margin: 30px 0 0 20px;
+			}
+			.end-box>a{
+				display: inline-block;
+				padding: 2px;
+				font-size: 14px;
+				margin-left: 5px;
+				color: #a0a0a0;
+				cursor: pointer;
+			}
+			.end-box>a:hover{
+				color: white;
+			}
+			
+			
+			.center{
+				margin: 0 auto;
+				width: 1025px;
+			
+			}
+			.pto{
+				display:block;
+				width: 100%;
+				height:366px;
+				cursor: pointer;
+			}
+			.setm{
+				display: block;
+				width: 100%;
+				height: 60px;
+				
+				
+			}
+			
+			.con-center{
+				display: flex;
+			    justify-content: space-around;
+			    width: 100%;
+				
+			}
+			.con-center>li{
+				width: 250px;
+				display: inline-block;
+				cursor: pointer;
+			}
+				.con-center>li:hover{
+				transform: translate(0,-9px);
+	             box-shadow:0 4px 12px 3px rgba(0,0,0,0.2);
+			}
+			.photo{
+				display: block;
+				width: 100%;
+				height: 333px;
+				
+			}
+			.cen-name{
+				text-align: center;
+				padding: 5px 0;
+				font-size: 14px;
+				
+			}
+			.cen-money{
+				display:block;
+				width: 150px;
+				margin: 0 auto;
+				padding: 10px 0;
+				
+				
+			}
+			.cen-money>span{
+				padding: 0 5px;
+				text-align: center;
+			}
+			.cen-money>span:nth-child(1){
+				text-decoration: line-through;
+				font-size: 12px;
+				color: #999;
+			}
+			.cen-money>span:nth-child(2){
+				color: red;
+				font-weight: 700;
+			}
+			.end{
+				width: 100%;
+				height: 235px;
+				background: url(img/end-0.png) no-repeat;
+				background-size:cover ;
+				cursor: pointer;
+				
+			}
+     </style>
+	</head>
+	<body>
+		<div class="titile">
+			<div class="titile-box clear">
+				<a class="titile-logo" href="sy.html"></a>
+				<ul class="title-nav">
+					<li>
+						<a href="sy.html">首页</a>
+						<span></span>
+					</li>
+					
+				
+					
+					<li>
+						<a href="f1.html">衣服</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f2.html">T恤·衬衫</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f3.html">鞋袜</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f4.html">包袋</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f5.html">美酒</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f6.html">美食</a>
+						<span></span>
+					</li>
+					<li>
+						<a href="f7.html">生活</a>
+						<span></span>
+					</li>
+				</ul>
+				<div class="search">
+					<input type="text" name="" id="" value="" />
+				    <input type="submit" name="" id="" value="" />
+				</div>
+				<a id="car" href="shopping.html"><span id="mun">0</span></a>
+				<div class="end-box">
+					<a id="zc" href="zuce.html">注册</a>
+					<a id="dl">登录</a>
+				</div>
+			</div>
+		</div>
+		<a class="pto"></a>
+		<div class="center clear">
+			<i class="setm"></i>
+	        <ul class="con-center clear">
+			</ul>
+			
+		</div>
+				
+		<p class="end"></p>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var t=null;
+			   dl.onclick=function(){
+			   	  if (Cookie.has("id")) {
+			   	  	    t= Cookie.get("id");
+			   	  	    zc.innerText="您好"+t;
+			   	  	    dl.innerText = "退出";
+			   	  }else{
+			   	  	 location.href="zy.html";
+			   	  }
+			   }; 
+			       if (Cookie.has("id")) {
+			   	  	    t= Cookie.get("id");
+			   	  	    zc.innerText="您好"+t;
+			   	  	    dl.innerText = "退出";
+			          }
+			var mun =document.getElementById("mun");
+			   var hrr = [];
+	          var	trr=null;
+					trr=localStorage;
+	        	
+			for (h in trr){	
+		        if(trr.hasOwnProperty(h)){
+		        		//JSON.parse就能获取到东西；
+		        	if (h.split("=")[1]==Cookie.get("id")) {			     	
+					   hrr.push(JSON.parse(trr[h]));					   
+				    }   
+		        }
+		    };
+			mun.innerText=hrr.length;
+			//获取数据
+			function getarr(callback){
+				var xhr = new  XMLHttpRequest();
+				xhr.open("GET","json/f5.json",true);
+				xhr.onreadystatechange=function(){
+					if (xhr.readyState==4&&xhr.status==200) {
+						var a = JSON.parse(xhr.responseText);
+						var  arr= a["dat"];
+						console.log(arr);
+//	                    callback(a)
+					callback(arr);
+					}
+				}
+				xhr.send();
+			}
+			
+			getarr(fun);
+			
+			//内容
+			function fun(arr){
+				var cen =document.getElementsByClassName("con-center")[0];
+				var cens = cen.children;
+				var setm =document.getElementsByClassName("setm")[0];
+				var pto =document.getElementsByClassName("pto")[0];
+				console.log(pto);
+				arr.forEach(function(ele){
+					//标题图
+					setm.style="background:url("+ele.ps+");";
+					//
+					pto.style="background:url("+ele.pto+"); background-size:100% 366px;" ;
+					//创建li
+					var li=document.createElement("li");
+					var photo =document.createElement("i");
+					//相片
+					photo.className="photo";
+					photo.style="background:url("+ele.pic+"); background-size:cover;"
+					//名字
+					var cname =document.createElement("p");
+					cname.className="cen-name";
+					cname.innerText=ele.name;
+					//价格
+					var cmon =document.createElement("p");
+					cmon.className="cen-money";
+					//原价
+					var csp1 =document.createElement("span");
+					csp1.innerHTML="￥"+ele.ymon;
+					//原价
+					var csp2 =document.createElement("span");
+					csp2.innerHTML="￥"+ele.xmon;
+					li.appendChild(photo);	
+					li.appendChild(cname);
+					li.appendChild(cmon);					
+					cmon.appendChild(csp1);
+					cmon.appendChild(csp2);
+					li.setAttribute("pid",ele.id);
+					li.onclick=function(){
+					var z=this.getAttribute("pid");
+						location.href="xq4-7.html?pid="+z;
+					}
+					cen.appendChild(li);
+				});
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>
+

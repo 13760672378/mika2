@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			ul{list-style: none;}
+			a{
+				text-decoration: none;
+			}
+			:root{
+				/*background: red;*/
+			}
+			.clear::after{
+				content: "";
+				display: table;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.mor{
+				width: 932px;
+				display: block;
+				margin: 10px auto;
+		
+				
+			}
+			.titile{
+			width: 100%;
+			height: 96px;
+             position: relative;
+			}
+			.titile>i:first-child{
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: url(img/10ye.jpg) center no-repeat;
+			}
+			.titile>i:last-child{
+				position: absolute;
+				top: 0;
+				right: 20px;
+				display: inline-block;
+				width: 558px;
+				height: 52px;
+				background: url(img/10years.png);
+			}
+			.title{
+				display: block;
+				width: 100%;
+			}
+			.title>span{
+				display: block;
+				width: 100%;
+				text-align: center;
+				font-size: 30px;
+				margin-bottom: 30px;
+			}
+			.cen-title{
+				display: block;
+				width: 390px;
+				height: 30px;
+				background: url(img/quzhi.jpg) no-repeat  center;
+			}
+			.ps{
+				float:left;
+				background: url(img/loveq_in.jpg) no-repeat ;
+				background-size: 662px 674px ;
+				width: 662px;
+				height: 674px;
+			}
+			#box{
+				display: block;
+				float: left;
+				margin-top: 100px;
+				width: 268px;
+				border: 1px solid #F5F5F5;
+				/*background: #F5F5F5;*/
+			}
+			#box>input{
+				display: block;
+				width: 90%;
+				margin: 10px auto;
+				height: 30px;
+				text-indent: 10px;
+				outline: none;
+			}
+			.n{
+				font-size: 5px;
+				width: 100%;
+				height: 30px;
+				position: relative;
+				text-indent:30px ;
+			}
+			.n>span{
+				position:absolute;
+				left: 0;
+			}
+			#one{
+				display: none;
+			}
+			#two{
+				display: none;
+			}
+			#box>button{
+				display: block;
+				width: 90%;
+				margin: 30px auto;
+				padding: 20px 0;
+				outline: none;
+				border: none;
+				background: skyblue;
+				color: white;
+			}
+			#end{
+				display: inline-block;
+				width: 100%;
+			}
+			#end>input{
+				float: left;
+				margin: 5px  5px  0 10px;
+			}
+			#end>span{
+				float: left;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mor clear">
+			<div class="titile clear">
+				<i></i>
+				<i></i>
+			</div>
+			<p class="cen-title"></p>
+			<div class="ps">
+					<i></i>
+			</div>
+		    <div id="box">
+				<p class="title"><span>会员注册登录</span></p>
+				<input type="text" name="" id="txt" value="" placeholder="手机号" />
+				<p class="n">
+					<span id="one">可以使用</span>
+					<span id="two">已注册</span>
+				</p>
+				<input type="password" name="" id="pwdone" value="" placeholder="密码" />
+				<input type="password" name="" id="pwdtwo" value="" placeholder="再次输入密码" />
+				<button id="register">确定注册</button>
+				<p id="end">
+					<input type="checkbox" name="" id="items" value="" />
+				    <span>我已看过并接受《用户协议》</span>
+				</p>
+		    </div>
+		</div>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/tj.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var txt = document.getElementById("txt");
+			var items = document.getElementById("items");
+			var pwdone = document.getElementById("pwdone");
+			var pwdtwo = document.getElementById("pwdtwo");
+			var register = document.getElementById("register");
+			console.log(pwdtwo,pwdone);
+			//手机号
+			txt.addEventListener("change",function(){
+			var reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+				if (reg.test(txt.value)==true) {
+					txt.style.border="1px solid yellowgreen";
+					$("#one").css({"display": "block"})
+					$("#two").css({"display": "none"})
+					if (Cookie.has(txt.value)==true) {
+						$("#one").css({"display": "none"})
+						$("#two").css({"display": "block"})
+						txt.style.border="1px solid yellow";
+						$("#txt").animateCss("hinge")
+					}
+					
+
+				}else{
+					txt.style.border="1px solid red";
+					alert("请输入正确手机号")
+			    $("#txt").animateCss("jello")
+				}
+			})
+			pwdone.addEventListener("change",function(){
+				var res = /^(?!^[0-9]+$)(?!^[a-zA-Z]+$)[\da-zA-Z]{8,12}$/;
+				if(res.test(pwdone.value)==true){
+					 pwdone.style.border="1px solid #999";
+				}else{
+					pwdone.style.border="1px solid red";
+					alert("别搞事情"+"密码6-12位,不能是全是数字或者英文")
+				}
+			})
+			//密码
+			pwdtwo.addEventListener("change",function(){
+				if (pwdtwo.value==pwdone.value) {
+					 pwdtwo.style.border="1px solid yellowgreen";
+				} else{
+					pwdtwo.style.border="1px solid red";
+					alert("密码不一致")
+				}
+//				
+			})
+			//注册
+			register.addEventListener("click",function(){
+				var reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+				var res = /^(?!^[0-9]+$)(?!^[a-zA-Z]+$)[\da-zA-Z]{8,12}$/;
+				if (items.checked == true) {
+						if (reg.test(txt.value)==true) {
+							if (pwdtwo.value==pwdone.value) {
+								Cookie.set(txt.value,pwdtwo.value,120);
+							     location.href="zy.html";
+							}
+						}
+						
+					} else {
+						alert("请打沟")
+					}
+				})
+			
+			
+			
+			
+			
+			
+			//cookie方法
+
+var Cookie={
+	//设置cookie             oexp 过期时间  单位是分钟
+	set:function(oname,ovalue,oexp){
+		var oname = encodeURIComponent(oname); 
+		var ovalue = encodeURIComponent(ovalue); 
+		var d = new Date();
+		d.setMinutes(d.getMinutes()+oexp);
+		document.cookie=oname+"="+ovalue+";expires="+d.toGMTString();
+	},
+	get:function(oname){   //获取cookie中name对应的值    返回对应的值
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		for(var i=0;i<arr.length;i++){
+			var brr = arr[i].split("=");
+			if(brr[0]==oname){
+				return decodeURIComponent(brr[1])
+			}
+		}
+	},
+	has:function(oname){  //判断是否存在该name   返回true/false
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		return arr.some(function(a){
+				return a.split("=")[0]==oname
+		})		
+	},
+	del:function(oname){  //删除指定name和它的value
+		var oname = encodeURIComponent(oname);
+		var arr = document.cookie.split("; ");
+		for(var i=0;i<arr.length;i++){
+			var brr = arr[i].split("=");
+			if(brr[0]==oname){
+				var d = new Date();
+				d.setMinutes(-1);
+				document.cookie=oname+"="+brr[1]+";expires="+d.toGMTString();
+				return decodeURIComponent(brr[0])+"="+decodeURIComponent(brr[1])
+			}
+		}
+		
+	}
+}
+		</script>
+	</body>
+</html>

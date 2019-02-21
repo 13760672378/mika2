@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+				ul{list-style: none;}
+				a{text-decoration: none;}
+				body{
+				user-select:none;
+				}
+			.clear::after{
+				content: "";
+				display: table;
+				clear: both;
+				height: 0;
+				visibility: hidden;
+			}
+			.titile {
+			display: inline-block;
+			width: 100%;
+			background: #343434;
+			position: fixed;
+			top: 0;
+			z-index: 100;
+			}
+
+			.titile-box {
+				margin: 0 auto;
+				width: 1180px;
+				height: 76px;
+			}
+			
+			.titile-logo {
+				float: left;
+				width: 200px;
+				height: 76px;
+				background: url(img/logo.jpg);
+				background-size: cover;
+			}
+			
+			.title-nav {
+				float: left;
+				width: 600px;
+				margin-left: 30px;
+				display: flex;
+				justify-content: space-around;
+			}
+			
+			.title-nav>li {
+				position: relative;
+				float: left;
+				height: 76px;
+				line-height: 86px;
+				text-align: center;
+			}
+			
+			.title-nav>li>a {
+				display: inline-block;
+				font-weight: 700;
+				font-size: 15px;
+				padding: 0 10px;
+				color: #a0a0a0;
+			}
+			
+			.title-nav>li>span {
+				position: absolute;
+				display: block;
+				bottom: 2px;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 0px;
+				height: 2px;
+				background: white;
+				transition: all 0.6s;
+			}
+			
+			.title-nav>li:hover>span {
+				width: 100%;
+			}
+			
+			.title-nav>li>a:hover {
+				color: white;
+				cursor: pointer;
+			}
+			
+			.search {
+				margin: 34px 0 0 20px;
+				float: left;
+				width: 53px;
+				height: 17px;
+				overflow: hidden;
+				background: url(img/sea.png) no-repeat;
+			}
+			
+			.search>input:first-child {
+				display: inline-block;
+				float: left;
+				width: 30px;
+				height: 20px;
+				text-indent: 15px;
+				background: transparent;
+				outline: none;
+				border: none;
+			}
+			
+			.search>input:nth-child(2) {
+				display: block;
+				float: left;
+				width: 23px;
+				height: 20px;
+				border: none;
+				outline: none;
+				background: transparent;
+				cursor: pointer;
+			}
+			
+			#car {
+				display: block;
+				margin: 25px 0 0 25px;
+				float: left;
+				width: 32px;
+				height: 30px;
+				background: url(img/nav02.png) no-repeat center;
+			}
+			
+			#car>span {
+				display: block;
+				margin: 5px 0 0 14px;
+				font-size: 14px;
+				color: white;
+			}
+			
+			#car:hover>span {
+				text-decoration: underline;
+			}
+			
+			.end-box {
+				float: left;
+				display: inline-block;
+				margin: 25px 0 0 20px;
+			}
+			
+			.end-box>a {
+				display: inline-block;
+				padding: 5px;
+				font-size: 14px;
+				margin-left: 10px;
+				color: #a0a0a0;
+				cursor: pointer;
+			}
+			
+			.end-box>a:hover {
+				color: white;
+			}
+			
+			.mor{
+				width: 1200px;
+				margin: 90px auto;
+				position: relative;
+			}
+			#ps-box{
+				float: left;
+				width: 435px;
+				height: 580px;
+				position: relative;
+				background: yellowgreen;
+			}
+			
+			#mask{
+			    opacity: 0;
+				position: absolute;
+				cursor: pointer;
+				width: 100px;
+				height: 100px;
+				background-color: rgba(0,0,0,0.3);
+				cursor:crosshair;
+			}		
+			.big-ps{
+				position: absolute;
+				display: none;
+				top: 100px;
+				left: 550px;
+				width: 290px;
+				height: 290px;
+				z-index: 5;
+				background: red;
+				
+			}
+			#listBox{
+				position: relative;
+				float: left;
+				margin-left:10px;
+				width: 102px;
+				height: 560px;
+				overflow: hidden;
+				
+			}
+			#list{
+				width: 102px;
+				position: absolute;
+				top: 0px;
+				
+			}
+			#list>li{
+				width: 100%;
+				height: 136px;
+				margin-bottom: 5px;
+				cursor: pointer;
+			}
+			#list>li>img{
+				width: 100%;
+				height: 136px;
+			}
+			.box{
+				display: inline-block;
+			    position: absolute;
+				left: 37%;
+				bottom: 0px;
+			}
+			.box>a{
+				display: block;
+				float: left;
+				width: 49px;
+				height: 15px;
+				margin-right: 5px;
+				cursor: pointer;
+			}
+			.box>a:nth-child(1){
+				background: url(img/3-1.jpg);
+			}
+			.box>a:nth-child(2){
+				background: url(img/3-2.jpg);
+			}
+			.center{
+				float: left;
+				margin-left: 20px;
+				width: 452px;
+			}
+			.titler{
+				width: 100%;
+				height: 35px;
+				background: silver;
+				border-radius:10px ;
+				text-align: center;
+				line-height: 35px;
+				font-size: 20px;
+			}
+			
+			.center-center{
+				display: inline-block;
+				width: 100%;
+			}
+			.center-center>li{
+				width: 100%;
+				height: 30px;
+				margin-top: 10px;
+				line-height: 35px;
+			}
+			.center-center>li>span{
+				font-size: 14px;
+			}
+			.ff{
+				display: inline-block;
+			     line-height: 30px;
+				overflow: hidden;
+			}
+			
+			.pic{
+				color: red;
+			}
+			.pi{
+				font-size:14px;
+				text-decoration: line-through;
+			}
+			.name{
+				padding-left: 35px;
+				font-size: 12px;
+				color: black;
+				position: relative;
+			}
+			.name::after{
+				position: absolute;
+				top: -5px;
+				content: "";
+				display: block;
+				width: 30px;
+				height: 30px;
+				background: url(img/4-1.png) no-repeat;
+				background-size:30px 30px;
+				
+			}
+			.siz{
+				display: inline-block;
+			}
+			.siz>li{
+				float: left;
+				width: 30px;
+				height: 28px;
+				background: transparent;
+				border:1px solid#999 ;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.siz>li:last-child{
+				width: 45px;
+			}
+			.siz>li>span{
+				display: block;
+				text-align: center;
+				font-size: 14px;
+				line-height: 30px;
+			}
+			.siz>li:hover{
+				border: 1px solid red;
+			}
+			.center-center>li:nth-child(8)>i{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				cursor: pointer;
+			}
+			.center-center>li:nth-child(8) #first{
+				background:url(img/4-3.jpg);
+				background-size:cover ;
+			}
+			.center-center>li:nth-child(8) #last{
+				background: url(img/4-4.jpg);
+				background-size:cover ;
+			}
+			#num{
+				display: inline-block;
+				width: 30px;
+				height: 28px;
+				background: transparent;
+				border:1px solid#999 ;
+				margin-top: -5px;
+				overflow: hidden;
+				cursor: pointer;
+				text-align: center;
+			}
+			
+			.center-center>li:last-child{
+				height: 85px;
+			
+			}
+			
+			.center-center>li:last-child>button{
+				display: block;
+				margin:25px 20px 0 20px;
+				float: left;
+				width: 51px;
+				height: 49px;
+				background: red;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			
+			.center-center>li:last-child>button:nth-child(1){
+				display: inline-block;
+			 	width: 195px;
+				background:red;
+				font-size: 30px;
+				color: white;
+			}
+			.center-center>li:last-child>button:nth-child(2){
+				background:transparent url(img/4-6.png);
+				background-size:cover ;
+			}
+			.center-center>li:last-child>button:nth-child(3){
+				background:transparent url(img/4-7.png);
+				background-size:cover ;
+			}
+			.xq{
+				display: block;
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.xq>li{
+				float: left;
+				padding: 10px 0;
+				width: 50%;
+				text-align: center;
+				background: #e8e8e8;
+				font-size: 12px;
+				cursor: pointer;
+			}
+			.xq>li:last-child{
+				background: #f6f6f6;
+			}
+			.wrap{
+				display: block;
+				width: 1200px;
+				margin: 0 auto;
+				position: relative;
+			}
+			.wrap>li{
+				display: block;
+				position: absolute;
+				width: 1200px;
+				top: 45px;
+				opacity: 0;
+			
+			}
+			.wrap>li:nth-child(1){
+				
+			}
+			.wrap>li:nth-child(2){
+				display: block;
+				background: url(img/18c4a3290d0d1d4eb5bddb2fe71b386.png) no-repeat;
+				background-size:1200px 440px ;
+				width: 1200px;
+				height: 440px;
+			}
+			.wrap>li.hid{
+				opacity: 1;
+			}
+			.wrap>li:nth-child(1)>i{
+				display: block;
+				width: 1200px;
+			}
+			#six{
+				height: 1800px;
+				background: salmon;
+			}
+			#seven{
+				height: 2500px;
+				background: yellow;
+			}
+			#tap{
+				width: 35px;
+				height: 35px;
+				background: url(img/10.png);
+				background-position:0px 1px ;
+				position: fixed;
+				bottom: 100px;
+				right: 100px;
+				border: 1px solid #999;
+				cursor: pointer;
+			}
+	</style>
+	</head>
+<body>       <div class="titile">
+				<div class="titile-box clear">
+					<a class="titile-logo" href="sy.html"></a>
+					<ul class="title-nav">
+						<li>
+				            <a href="sy.html">首页</a>
+				            <span></span>
+						</li>		
+						<li>
+							<a href="f1.html">衣服</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f2.html">T恤·衬衫</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f3.html">鞋袜</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f4.html">包袋</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f5.html">美酒</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f6.html">美食</a>
+							<span></span>
+						</li>
+						<li>
+							<a href="f7.html">生活</a>
+							<span></span>
+						</li>
+					</ul>
+					<div class="search">
+						<input type="text" name="" id="" value="" />
+					    <input type="submit" name="" id="" value="" />
+					</div>
+					<a id="car" href="shopping.html"><span id="mun">0</span></a>
+					<div class="end-box">
+						<a id="zc">注册</a>
+						<a id="dl">登录</a>
+					</div>
+				</div>
+			</div>
+
+    	
+				<div class="mor clear">
+				<div id="ps-box">
+			
+					<div id="mask"></div>
+				</div>
+				<div class="big-ps"></div>
+				<div id="listBox">
+					<ul id="list">
+					</ul>
+				</div>
+				<div class="box">
+					<a id="left-btn"></a>
+					<a id="right-btn"></a>
+				</div>
+				<div class="center clear">
+					<p class="titler"></p>
+					<ul class="center-center">
+						<li>
+							<span>限时折扣价：</span>
+							<span class="pic"></span>
+			
+						</li>
+						<li>
+							<span>价格：</span>
+							<span class="pi"></span>
+						</li>
+						<li>
+							<a class="name" href="https://mall.loveq.cn/package_buy.htm?act_id=482"> 御寒价，好暖心㗎棉衣夹克+10得卫衣/毛衣，再+10得圆领</a>
+						</li>
+						<li>
+							<a class="name" href="https://mall.loveq.cn/package_buy.htm?act_id=482"> 御寒价，好暖心㗎毛衣/卫衣+10得长袖圆领</a>
+						</li>
+						<li>
+							<span>编号：</span>
+							<span id="lq"></span>
+						</li>
+						<li>
+							<span>库存：</span>
+							<span>抢购中</span>
+						</li>
+						<li>
+							<span class="ff">尺码：</span>
+							<ul class="siz">
+								<li>
+									<span>S</span>
+								</li>
+								<li>
+									<span>M</span>
+								</li>
+								<li>
+									<span>L</span>
+								</li>
+								<li>
+									<span>XL</span>
+								</li>
+								<li>
+									<span>XXL</span>
+								</li>
+								<li><span>XXXL</span></li>
+							</ul>
+						</li>
+						<li>
+							<span class="ff">数量：</span>
+							<i id="first"></i>
+							<span id="num">1</span>
+							<i id="last"></i>
+							<span class="ff">件</span>
+						</li>
+						<li>
+							<button id="go">买 ! BUY</button>
+							<button></button>
+							<button></button>
+						</li>
+					</ul>
+			
+				</div>
+			</div>
+			<ul class="xq">
+				<li>
+					<span>详细信息</span>
+					<ul>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<span>买家评价</span>
+				</li>
+			</ul>
+			<ul class="wrap">
+				<li class="hid">
+				  <i id="six"></i>
+				  <i id="seven"></i>
+				</li>
+				<li class="">
+					
+				</li>
+			</ul>
+			<p id="tap"></p>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var psBox =document.getElementById("ps-box");
+			console.log(psBox);
+			var mask = document.getElementById("mask");
+			var bigPs =document.getElementsByClassName("big-ps")[0];
+			var listBox =document.getElementById("listBox");
+			var list =document.getElementById("list");
+			var lBtn =document.getElementById("left-btn");
+			var rBtn =document.getElementById("right-btn");
+            var siz =document.getElementsByClassName("siz")[0];
+            var sizLi =siz.children;
+            var title =document.getElementsByClassName("titler")[0];
+            
+            var xq =document.getElementsByClassName("xq")[0];
+            var xqs =xq.children;
+            var wrap =document.getElementsByClassName("wrap")[0];
+            var wraps =wrap.children;      
+            var six =document.getElementById("six");
+            var seven =document.getElementById("seven");
+            var mu =document.getElementById("mun");
+          
+          var dl =document.getElementById("dl");
+			var zc =document.getElementById("zc");
+			var t=null;
+			dl.onclick=function(){
+			   	if (Cookie.has("id")) {
+				   	  	t= Cookie.get("id");
+				   	  	zc.innerText="您好"+t;
+				   	  	dl.innerText = "退出";
+				   	    }else{
+				   	  	location.href="zy2.html";
+			   	    }
+			    }; 
+			    if (Cookie.has("id")) {
+			   	  	    t= Cookie.get("id");
+			   	  	    zc.innerText="您好"+t;
+			   	  	    dl.innerText = "退出";
+			    }
+          
+          
+          
+          function getarr(callback){
+				var xhr = new  XMLHttpRequest();
+				xhr.open("GET","json/xqy.json",true);
+				xhr.onreadystatechange=function(){
+					if (xhr.readyState==4&&xhr.status==200) {
+						var a = JSON.parse(xhr.responseText);
+						var arr= a["goods"][0];
+//						var  arr= a["data"];
+//	                    callback(a)
+					console.log(arr);
+					callback(arr);
+					}
+				}
+				xhr.send();
+			}
+			
+			getarr(fun);
+            function fun (arr) {
+             	var pid= location.search.split("=")[1];
+              	var d=arr[pid];
+             	var drr=[];
+             	for(var e in d){
+              		drr.push(d[e]);
+             	}
+             	console.log(d);
+             	var bigw = null
+            	var bigh = null;
+            	console.log(bigw,bigh);
+//            	console.log(drr);
+                setphotos(drr[0],drr[0]);
+	            for (var i=0;i<4;i++) {
+	            	var li =document.createElement("li");
+	            	li.style="background: url("+drr[i]+"); background-size:cover ;"
+	                li.onclick=(function(a){
+	                    return function(){
+	                    	   setphotos(drr[a],drr[a]);
+	                    }
+	                })(i);
+	            	list.appendChild(li);
+	            }
+                   //标题     	
+            	var b =document.createElement("b");
+            	b.innerHTML=d["name"];
+             	title.appendChild(b);
+                   //现价
+                var pic =document.getElementsByClassName("pic")[0];
+                  pic.innerText="￥"+d["xmon"];
+                  //原价
+                var pi =document.getElementsByClassName("pi")[0];
+                  pi.innerText="￥"+d["mon"];
+                  //编号
+                   var lq =document.getElementById("lq");
+                   console.log(lq);
+                lq.innerText=d["id"];
+                //six
+                  six.style=" background: url("+d["six"]+") no-repeat; background-size:1200px 1800px; "
+                  //seven
+                   seven.style=" background: url("+d["seven"]+") no-repeat; background-size:1200px 2500px; "
+                  
+            
+            psBox.addEventListener("mousemove",function(e){
+            	var e= e||window.event;
+            	var x = e.pageX;
+            	var y = e.pageY;
+            	
+            	var l = x-getPos(psBox).left-(mask.offsetWidth/2);
+            	var t = y-getPos(psBox).top-(mask.offsetHeight/2);
+            	if(l<=0){l=0};
+            	if(l>=psBox.offsetWidth-mask.offsetWidth){l=psBox.offsetWidth-mask.offsetWidth}
+            	if(t<=0){t=0};
+            	if(t>=psBox.offsetHeight-mask.offsetHeight){t=psBox.offsetHeight-mask.offsetHeight}
+            	mask.style.left=l+"px";
+            	mask.style.top= t+"px";
+            	
+                var mx = bigPs.offsetWidth/mask.offsetWidth; 
+            	var my =  bigPs.offsetHeight/mask.offsetHeight; 
+            	var bgx = (-1)*l*mx;
+            	var bgy = (-1)*t*my;
+//          	console.log(bgx,bgy);
+            	bigPs.style.backgroundPosition=bgx+"px "+bgy+"px";
+            })
+             psBox.addEventListener("mouseenter",function(){
+             	mask.style.opacity="1";     
+           	  	bigPs.style.display="block";
+           	  	bigw = bigPs.offsetWidth;
+                bigh =  bigPs.offsetHeight;
+
+             })
+            
+               psBox.addEventListener("mouseleave",function(){
+               	   mask.style.opacity="0";  
+             	   bigPs.style.display="none";
+               	  
+              
+               })
+          
+              function setphotos(img1,img2){
+            	psBox.style="background: url("+img1+");background-size:cover;"
+//          	console.log(hsiz);
+            var w = psBox.offsetWidth/mask.offsetWidth;
+            var h = psBox.offsetHeight/mask.offsetHeight;
+              var wsiz= 290*w;
+            var hsiz = 290*h;
+            	bigPs.style="background: url("+img2+"); background-size:"+wsiz+"px "+hsiz+"px;"
+			}
+			
+			
+				//尺寸
+				var m;
+	     for(i=0;i<sizLi.length;i++){
+	     	sizLi[i].onclick=(function(a){
+	     		return function(){
+	     			for (j=0;j<sizLi.length;j++) {
+	     				sizLi[j].style="";
+	     			}
+	      			 sizLi[a].style="border:1px solid red;";
+	      			m = sizLi[a].innerText;
+	     		}
+	     	})(i);
+	     };
+	    //数量
+	    var first =document.getElementById("first"); 
+	    var cNum  = document.getElementById("num");
+	    var last =document.getElementById("last");
+	    var cla=0;
+	    first.onclick=function(){
+	    	if (cNum.innerText<=1) {
+	    		console.log(1);
+	    		cNum.innerText=1;
+	    	}else{
+	    	cla--;
+	    	cNum.innerText=cla;
+	    	}
+	    	
+	    };
+	    last.onclick=function(){
+	    	cla++;
+	    	cNum.innerText=cla;
+	    }
+	    	    var	trr=null;
+					trr=localStorage;
+	        	var hrr = [];
+			for (h in trr){	
+		        if(trr.hasOwnProperty(h)){
+		        	//	console.log(h);
+		        		//JSON.parse就能获取到东西；
+		        	 if (h.split("=")[1]==Cookie.get("id")) {			     	
+					   hrr.push(JSON.parse(trr[h]));					   
+				    }    
+		        }
+		    };
+	         mun.innerText=hrr.length;
+			var go =document.getElementById("go");
+			go.addEventListener("click",function(){
+			    
+		        
+				var v=0 ;
+				console.log(hrr);
+				v= Number(cNum.innerText);
+				for(i=0;i<hrr.length;i++){
+					console.log(i);
+					if (hrr[i]["id"]==pid) {
+						    console.log(pid,hrr[i]["id"]);
+							v+=(hrr[i]["p.set"]);
+					}
+				}					
+
+				console.log(cNum.innerText);
+				if (m==undefined) {
+					alert("请选择尺寸")
+//					console.log(m);
+				}else{
+					var shop={
+					"id":pid,
+					"p.img":d["one"],
+					"p.name":d["name"],
+					"p.xmon":d["xmon"],
+					"p.siz":m,
+					"p.set":v
+				    }
+				localStorage.setItem(pid,JSON.stringify
+					(shop));
+				location.href="shopping.html?shopp="+pid+"curp";
+				}
+				
+			
+			})
+//                
+       }
+//          //tab切换
+          console.log(xqs,wraps);
+          for (i=0;i<xqs.length;i++) {
+          	xqs[i].onclick=function(a){
+          		return function(){
+          			clearClass(wraps)
+          			wraps[a].className="hid";
+          		}
+          	}(i)
+          }
+          
+          
+          function clearClass(arr) {
+					for(var i = 0; i < arr.length; i++) {
+						delClass(arr[i], "hid");
+					}
+				} 
+					//一键置顶
+			 var tap =document.getElementById("tap");
+			
+			 tap.onclick=function(){
+				timer = setInterval(function(){
+        			if(getScroll().y==0){
+                            clearInterval(timer)  				
+        			}
+        			scrollBy(0,-150) //向上滚动50
+        		},10)
+			}
+	</script>
+	</body>
+</html>
